@@ -1,0 +1,16 @@
+{% extends "userExp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br><br><br><br>
+  <div class="content-section">
+    <form method="post"> {% csrf_token %}{% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4"><center style="color:pink">Log In</center></legend>
+        <center style="color:pink">{{ form|crispy }}</center>
+      </fieldset>
+      <div class="form-group">
+        <center><button style="color:pink" class="btn btn-outline-info" type="submit">Login</button></center>
+      </div>
+    </form>
+  </div>
+{% endblock content %}

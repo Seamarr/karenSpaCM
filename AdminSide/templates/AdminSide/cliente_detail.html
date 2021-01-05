@@ -1,0 +1,54 @@
+{% extends "userExp/base.html" %}
+{% block content %}
+<style media="screen">
+  .info {
+    color:#FDA2EB;
+    border: 5px solid black;
+    padding:20px;
+  }
+  .firstRound {
+    font-size:35px;
+  }
+  .SiAnswer {
+    color:#0EFF47;
+  }
+  .NoAnswer {
+    color:red;
+  }
+  .listIt {
+    color:#FDA2EB;
+  }
+  .firstRound {
+
+  }
+  .theInfo {
+    float:right;
+  }
+</style>
+<br><br><br><br>
+<div class="theInfo">
+  <center class="info">
+    <h4>{{ object.name }}{% if object.edad != '0' %}, {{ object.edad }}{% endif %}</h4>
+    {% if object.domicilio != '' %}<h4>Domicilio: {{ object.domicilio }}</h4>{% endif %}
+    {% if object.mailE != '' %}<h4>Email: {{ object.mailE }}</h4>{% endif %}
+    {% if object.tel != '' %}<h4>Tel: {{ object.tel }}</h4>{% endif %}
+  </center>
+  <center>
+    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'client-update' object.id %}">Update</a>
+    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'client-delete' object.id %}">Delete</a>
+    <p></p>
+    <a style="color:#A5F0FC" href="{% url 'admin-home' %}">return</a>
+  </center>
+  <br><br>
+</div>
+<div class="firstRound">
+  <ul>
+    {% if object.asolea == 'Si' %}<li class="listIt" style="margin-left:60px">Se asolea con frecuencia</li>{% endif %}
+    {% if object.alimenticio == 'Si' %}<li class="listIt" style="margin-left:60px">Algun regimen alemticio</li>{% endif %}
+    {% if object.embarazada == 'Si' %}<li class="listIt" style="margin-left:60px">Esta embarazada</li>{% endif %}
+    {% if object.dispositivo == 'Si' %}<li class="listIt" style="margin-left:60px">Usted usa dispositivo</li>{% endif %}
+    {% if object.menopausia == 'Si' %}<li class="listIt" style="margin-left:60px">Problemas de menopausia</li>{% endif %}
+  </ul>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends "userExp/base.html" %}
+{% block content %}
+  <br><br><br><br>
+  <div class="content-section">
+    <form method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <center>
+          <legend style="color:red" class="border-bottom mb-4">Borrar Cliente</legend>
+          <h2 style="color:pink">Segura que quieres borrar este cliente?: "{{ object.name }}"</h2>
+        </center>
+      </fieldset>
+      <div class="form-group">
+        <center>
+          <button style="font-size:30px;" class="btn btn-outline-danger" type="submit">Si, Borrar</button>
+          <a style="font-size:30px;" class="btn btn-outline-secondary" href="{% url 'client-detail' object.id %}">Cancel</a>
+        </center>
+      </div>
+    </form>
+  </div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+.pics {
+  width:1980px;
+  height:500px;
+}
+
+.pics2 {
+  margin-top: 40px;
+}
+
+.log {
+  width:75px;
+  height:75px;
+}
+
+.info {
+  color:#FDA2EB;
+  font-size:30px;
+  margin-top:30px;
+}
+
+.tryName {
+  color:#FDA2EB;
+}
